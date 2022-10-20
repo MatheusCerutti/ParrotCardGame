@@ -1,0 +1,40 @@
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #EEF9BF;
+}
+
+.nomeJogo{
+    font-size:56px;
+    color:#75B79E;
+    font-family:"Roboto", sans-serif;
+    margin:40px 0px 47px 0px;
+    text-align: center;
+    
+}
+
+.tabuleiro{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartas{
+    width:117px;
+    height:146px;
+    border-radius: 5px;
+    background-color: #A7E9AF;
+    box-sizing: border-box;
+    border: 1px solid #99CEA8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:34px;
+}
+
+.parrot{
+    width:100px;
+    height:100px;
+}
