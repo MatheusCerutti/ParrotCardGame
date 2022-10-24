@@ -20,9 +20,50 @@ function distribuirCartas(){
     arrayCartas.sort((a,b) => Math.random()-0.5);
 
     for(let x=0;x<quantidadeCartas;x++){
-        inserirCartasHTML.innerHTML += `<div class="cartas"><div class="face front"><img class="parrot" src="./images/back.png" /></div>
-        <div class="face back"><img class="parrot" src=${arrayCartas[x]} /></div>  
+        inserirCartasHTML.innerHTML += `<div class="cartas" onclick="virarCarta(this)"><div class="face front"><img class="parrot" src=${arrayCartas[x]} /></div>
+        <div class="face back"><img class="parrot" src="./images/back.png" /></div>  
             
         </div>`;
     }
 }
+
+let cartaEscolhidaAntes = "";
+let cartaEscolhida = "";
+
+function virarCarta(cartaEscolhidaReal){
+    cartaEscolhida = cartaEscolhidaReal;
+    cartaEscolhidaAntes = document.querySelector(".flip");
+    const imgAntes = document.querySelector(".flip .face .parrot");
+    cartaEscolhida.classList.add("flip");
+    const imgAgora = cartaEscolhida.querySelector(".face .parrot");
+    const img2 = imgAgora.getAttribute('src');
+
+    if(cartaEscolhidaAntes !== null){
+        const img1 = imgAntes.getAttribute('src');
+        cartaEscolhida.classList.add("flip");
+        const imgAgora = cartaEscolhida.querySelector(".face .parrot");
+        const img2 = imgAgora.getAttribute('src');
+        console.log(img1);
+        console.log(img2);
+
+        if (img1 == img2){
+            cartaEscolhidaAntes.classList.add("virada");
+            cartaEscolhida.classList.add("virada");        
+        }
+
+        console.log(cartaEscolhidaAntes);
+        console.log(cartaEscolhida);
+
+
+        setTimeout(desvirarCartas,1000,cartaEscolhida,cartaEscolhidaAntes);
+    }
+    
+
+}
+
+function desvirarCartas(a,b){
+    a.classList.remove("flip");
+    b.classList.remove("flip");
+
+}
+

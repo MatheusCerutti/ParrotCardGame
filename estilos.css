@@ -25,6 +25,7 @@ body{
     width:117px;
     height:146px;
     margin:34px;
+    transform-style: preserve-3d;
 }
 
 .parrot{
@@ -33,11 +34,12 @@ body{
 }
 
 .front{
-
+    transform: rotateY(180deg);
 }
 
 .back{
- 
+    backface-visibility: hidden;
+    
 }
 
 .face{
@@ -54,4 +56,38 @@ body{
     
 }
 
+.flip{
+    transform: rotateY(180deg);
+}
+
+.faces{
+    width:100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    position: absolute;
+
+}
+
+#fronts{
+    background-color: greenyellow;
+    transform: rotateY(180deg);
+}
+
+#backs{
+    background-color: aqua;
+    backface-visibility: hidden;
+
+}
+
+#card{
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.virada{
+    transform: rotateY(180deg);
+}
 
